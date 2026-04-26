@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact GadgetLab — we’re here to help.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <title>Contact — GadgetLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="contact">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__msg">We reply within one business day</p>
+      <a href="../index.html" class="topbar__link">Home</a>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <button type="button" class="header__menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <img src="../images/icon-menu.svg" alt="" width="16" height="15" class="header__menu-open">
+        <img src="../images/icon-close.svg" alt="" width="14" height="15" class="header__menu-close" hidden>
+      </button>
+
+      <a href="../index.html" class="header__brand" aria-label="GadgetLab home">
+        <span class="header__brand-mark">G</span>
+        <span class="header__brand-text">GadgetLab</span>
+      </a>
+
+      <form class="header__search" role="search" action="products.html" method="get">
+        <label class="visually-hidden" for="site-search">Search products</label>
+        <input type="search" id="site-search" name="q" class="header__search-input" placeholder="Search…" autocomplete="off">
+      </form>
+
+      <nav class="nav nav--desktop" aria-label="Main">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="products.html" class="nav__link">Products</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link is-active">Contact</a></li>
+        </ul>
+      </nav>
+
+  
+      <a href="cart.html" class="header__cart-btn" aria-label="Shopping cart">
+          🛒
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobile-overlay" hidden></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <form class="mobile-nav__search" action="products.html" method="get" role="search">
+      <input type="search" name="q" class="mobile-nav__search-input" placeholder="Search…" aria-label="Search products">
+    </form>
+    <ul class="mobile-nav__list">
+      <li><a href="../index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="products.html" class="mobile-nav__link">Products</a></li>
+      <li><a href="about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+      <li><a href="cart.html" class="mobile-nav__link">Cart</a></li>
+      <li><a href="login.html" class="mobile-nav__link">Log in</a></li>
+      <li><a href="signup.html" class="mobile-nav__link">Sign up</a></li>
+      <li><a href="profile.html" class="mobile-nav__link">Profile</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="inner-main">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Contact us</h1>
+        <p class="page-hero__lede">Questions about an order, warranty, or product fit? Send a message — we read every one.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h3>Email</h3>
+          <p><a href="mailto:hello@gadgetlab.demo">hello@gadgetlab.demo</a></p>
+          <h3>Phone</h3>
+          <p><a href="tel:+18005550123">+1 (800) 555-0123</a></p>
+          <h3>Hours</h3>
+          <p>Mon–Fri, 9am–6pm (local time)</p>
+        </div>
+        <div class="contact-card">
+          <h3>Send a message</h3>
+          <form id="contact-form" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <label class="visually-hidden" for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" required placeholder="Your name" style="padding: 0.65rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font: inherit;">
+            <label class="visually-hidden" for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" required placeholder="Email" style="padding: 0.65rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font: inherit;">
+            <label class="visually-hidden" for="contact-msg">Message</label>
+            <textarea id="contact-msg" name="message" rows="4" required placeholder="How can we help?" style="padding: 0.65rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font: inherit; resize: vertical;"></textarea>
+            <button type="submit" class="btn btn--primary">Send message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="../index.html" class="footer__logo"><span class="header__brand-mark">G</span> GadgetLab</a>
+        <p class="footer__tagline">Independent tech retailer.</p>
+      </div>
+      <div>
+        <h3 class="footer__heading">Shop</h3>
+        <ul class="footer__list">
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Support</h3>
+        <ul class="footer__list">
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Company</h3>
+        <ul class="footer__list">
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> GadgetLab.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="../js/products-data.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/auth-local.js"></script>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      e.target.reset();
+      window.GadgetLab.showToast("Message sent — we’ll get back to you soon.");
+    });
+  </script>
+</body>
+</html>

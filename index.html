@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GadgetLab — premium gadgets, audio, wearables, and smart home tech.">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>GadgetLab — Tech &amp; Gadgets Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body data-page="home">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__msg">Free express shipping on orders over <strong>$75</strong> · 30-day easy returns</p>
+      <a href="pages/help-center.html" class="topbar__link">Help center</a>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <button type="button" class="header__menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <img src="./images/icon-menu.svg" alt="" width="16" height="15" class="header__menu-open">
+        <img src="./images/icon-close.svg" alt="" width="14" height="15" class="header__menu-close">
+      </button>
+
+      <a href="index.html" class="header__brand" aria-label="GadgetLab home">
+        <span class="header__brand-mark">G</span>
+        <span class="header__brand-text">GadgetLab</span>
+      </a>
+
+      <form class="header__search" role="search" action="pages/products.html" method="get">
+        <label class="visually-hidden" for="site-search">Search products</label>
+        <input type="search" id="site-search" name="q" class="header__search-input" placeholder="Search headphones, watches, tablets…" autocomplete="off">
+      </form>
+
+      <nav class="nav nav--desktop" aria-label="Main">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link is-active">Home</a></li>
+          <li><a href="pages/products.html" class="nav__link">Products</a></li>
+          <li><a href="pages/about.html" class="nav__link">About</a></li>
+          <li><a href="pages/contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+     <div class="header__actions">
+        <div class="header__auth" data-auth-area></div>
+       <a href="pages/cart.html">
+       🛒
+       </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobile-overlay" hidden></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <form class="mobile-nav__search" action="pages/products.html" method="get" role="search">
+      <input type="search" name="q" class="mobile-nav__search-input" placeholder="Search…" aria-label="Search products">
+    </form>
+    <ul class="mobile-nav__list">
+      <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="pages/products.html" class="mobile-nav__link">Products</a></li>
+      <li><a href="pages/about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="pages/contact.html" class="mobile-nav__link">Contact</a></li>
+      <li><a href="pages/cart.html" class="mobile-nav__link">Cart</a></li>
+      <li><a href="pages/login.html" class="mobile-nav__link">Log in</a></li>
+      <li><a href="pages/signup.html" class="mobile-nav__link">Sign up</a></li>
+      <li><a href="pages/profile.html" class="mobile-nav__link">Profile</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">New this season</p>
+          <h1 class="hero__title">Premium gadgets for work, play, and everything between.</h1>
+          <p class="hero__desc">Curated audio, wearables, and smart gear with honest specs, fast shipping, and real warranty support.</p>
+          <div class="hero__actions">
+            <a href="pages/products.html" class="btn btn--primary btn--lg">Shop collection</a>
+            <a href="pages/products.html" class="btn btn--ghost btn--lg">View deals</a>
+          </div>
+          <ul class="hero__stats" role="list">
+            <li><strong>50k+</strong> happy customers</li>
+            <li><strong>4.9</strong> average rating</li>
+            <li><strong>2-year</strong> warranty on select items</li>
+          </ul>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__card hero__card--1"></div>
+          <div class="hero__card hero__card--2"></div>
+          <div class="hero__card hero__card--3"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust">
+      <div class="container trust__grid">
+        <div class="trust__item">
+          <span class="trust__icon" aria-hidden="true">◆</span>
+          <div>
+            <h3 class="trust__title">Authentic gear</h3>
+            <p class="trust__text">Authorized partners only. Serial-verified where it matters.</p>
+          </div>
+        </div>
+        <div class="trust__item">
+          <span class="trust__icon" aria-hidden="true">◇</span>
+          <div>
+            <h3 class="trust__title">Fast delivery</h3>
+            <p class="trust__text">Same-day dispatch on in-stock orders before 2pm.</p>
+          </div>
+        </div>
+        <div class="trust__item">
+          <span class="trust__icon" aria-hidden="true">◎</span>
+          <div>
+            <h3 class="trust__title">Easy returns</h3>
+            <p class="trust__text">30-day hassle-free returns. No needless paperwork.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog section" id="featured">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Featured gadgets</h2>
+          <p class="section__subtitle">Tap a card for full specs — same flow as TechVerse product pages.</p>
+        </div>
+        <div class="product-grid" id="featured-grid" role="list"></div>
+        <p style="margin-top: 1.5rem; text-align: center;">
+          <a href="pages/products.html" class="btn btn--ghost">Browse all products</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="cta-band section">
+      <div class="container cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Join GadgetLab Plus</h2>
+          <p class="cta-band__text">Early access to drops, member pricing, and extended warranty — free to join.</p>
+        </div>
+        <form class="cta-band__form" id="newsletter-form">
+          <label class="visually-hidden" for="newsletter-email">Email</label>
+          <input type="email" id="newsletter-email" class="cta-band__input" placeholder="you@email.com" required>
+          <button type="submit" class="btn btn--inverse">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="support">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo"><span class="header__brand-mark">G</span> GadgetLab</a>
+        <p class="footer__tagline">Independent tech retailer focused on quality, clarity, and care.</p>
+      </div>
+      <div>
+        <h3 class="footer__heading">Shop</h3>
+        <ul class="footer__list">
+          <li><a href="pages/products.html">All products</a></li>
+          <li><a href="pages/cart.html">Cart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Support</h3>
+        <ul class="footer__list">
+          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="pages/contact.html">Returns</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Account</h3>
+        <ul class="footer__list">
+          <li><a href="pages/login.html">Log in</a></li>
+          <li><a href="pages/signup.html">Sign up</a></li>
+          <li><a href="pages/profile.html">Profile</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Company</h3>
+        <ul class="footer__list">
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/contact.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> GadgetLab. Demo storefront.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="./js/products-data.js"></script>
+  <script src="./js/site.js"></script>
+  <script src="./js/auth-local.js"></script>
+  <script src="./js/product-cards.js"></script>
+  <script src="./js/home-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — GadgetLab</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="profile">
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <button type="button" class="header__menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <img src="../images/icon-menu.svg" alt="" width="16" height="15" class="header__menu-open">
+        <img src="../images/icon-close.svg" alt="" width="14" height="15" class="header__menu-close" hidden>
+      </button>
+      <a href="../index.html" class="header__brand" aria-label="GadgetLab home">
+        <span class="header__brand-mark">G</span>
+        <span class="header__brand-text">GadgetLab</span>
+      </a>
+      <form class="header__search" role="search" action="products.html" method="get">
+        <label class="visually-hidden" for="site-search">Search products</label>
+        <input type="search" id="site-search" name="q" class="header__search-input" placeholder="Search…" autocomplete="off">
+      </form>
+      <nav class="nav nav--desktop" aria-label="Main">
+        <ul class="nav__list">
+          <li><a href="../index.html" class="nav__link">Home</a></li>
+          <li><a href="products.html" class="nav__link">Products</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        
+        <a href="cart.html" class="header__cart-btn" aria-label="Shopping cart">
+          🛒
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobile-overlay" hidden></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <ul class="mobile-nav__list">
+      <li><a href="../index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="products.html" class="mobile-nav__link">Products</a></li>
+      <li><a href="cart.html" class="mobile-nav__link">Cart</a></li>
+      <li><a href="login.html" class="mobile-nav__link">Log in</a></li>
+    </ul>
+  </nav>
+
+  <main class="profile-main">
+    <div class="container">
+      <div class="profile-layout">
+        <!-- Profile Sidebar -->
+        <aside class="profile-sidebar">
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="profile-avatar" id="profile-avatar">
+                <span id="avatar-initials">GL</span>
+              </div>
+              <div class="profile-info">
+                <h1 id="profile-display-name">Your Profile</h1>
+                <p id="profile-display-email">user@example.com</p>
+              </div>
+            </div>
+            <div class="profile-nav">
+              <button class="profile-nav-item is-active" data-tab="personal">
+                <span class="profile-nav-icon">👤</span>
+                <span>Personal Info</span>
+              </button>
+              <button class="profile-nav-item" data-tab="security">
+                <span class="profile-nav-icon">🔒</span>
+                <span>Security</span>
+              </button>
+              <button class="profile-nav-item" data-tab="orders">
+                <span class="profile-nav-icon">📦</span>
+                <span>Orders</span>
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+          <!-- Personal Info Tab -->
+          <div class="profile-tab is-active" id="tab-personal">
+            <div class="profile-section">
+              <h3>Personal Information</h3>
+              <p class="profile-section-desc">Update your personal details and contact information.</p>
+              <form class="profile-form" id="profile-form">
+                <div class="profile-field">
+                  <label class="profile-field-label" for="profile-name">Full Name</label>
+                  <input class="profile-input" type="text" name="name" id="profile-name" autocomplete="name" placeholder="Enter your full name">
+                </div>
+                <div class="profile-field">
+                  <label class="profile-field-label" for="profile-email">Email Address</label>
+                  <input class="profile-input" type="email" name="email" id="profile-email" autocomplete="email" disabled placeholder="Email cannot be changed">
+                  <small class="profile-field-hint">Your email is your unique identifier</small>
+                </div>
+                <div class="profile-field">
+                  <label class="profile-field-label" for="profile-phone">Phone Number</label>
+                  <input class="profile-input" type="tel" name="phone" id="profile-phone" autocomplete="tel" placeholder="Enter your phone number">
+                </div>
+                <div class="profile-field">
+                  <label class="profile-field-label" for="profile-address">Shipping Address</label>
+                  <textarea class="profile-input profile-input--textarea" name="address" id="profile-address" rows="4" autocomplete="street-address" placeholder="Enter your shipping address"></textarea>
+                </div>
+                <div class="profile-actions">
+                  <button class="btn btn--primary" type="submit">
+                    <span>Save Changes</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                  </button>
+                  <button class="btn btn--ghost" type="button" id="logout-button">
+                    <span>Log Out</span>
+                  </button>
+                </div>
+                <div id="profile-success" class="profile-success" aria-live="polite" hidden></div>
+                <div id="profile-error" class="profile-error" aria-live="polite" hidden></div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Security Tab -->
+          <div class="profile-tab" id="tab-security">
+            <div class="profile-section">
+              <h3>Security Settings</h3>
+              <p class="profile-section-desc">Manage your password and security preferences.</p>
+              <div class="security-info">
+                <div class="security-item">
+                  <div class="security-icon">🔒</div>
+                  <div class="security-text">
+                    <h4>Password</h4>
+                    <p>Last changed 30 days ago</p>
+                  </div>
+                  <button class="btn btn--ghost btn--sm">Change</button>
+                </div>
+                <div class="security-item">
+                  <div class="security-icon">📧</div>
+                  <div class="security-text">
+                    <h4>Email Notifications</h4>
+                    <p>Order updates and promotions</p>
+                  </div>
+                  <button class="btn btn--ghost btn--sm">Manage</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Orders Tab -->
+          <div class="profile-tab" id="tab-orders">
+            <div class="profile-section">
+              <h3>Order History</h3>
+              <p class="profile-section-desc">View your recent orders and track shipments.</p>
+              <div class="orders-empty">
+                <div class="orders-empty-icon">📦</div>
+                <h4>No orders yet</h4>
+                <p>When you place an order, it will appear here.</p>
+                <a href="products.html" class="btn btn--primary">Start Shopping</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> GadgetLab.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="../js/site.js"></script>
+  <script src="../js/auth-local.js"></script>
+  <script src="../js/profile-page.js"></script>
+</body>
+</html>

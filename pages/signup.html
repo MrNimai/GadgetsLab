@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up — GadgetLab</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="signup">
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <button type="button" class="header__menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <img src="../images/icon-menu.svg" alt="" width="16" height="15" class="header__menu-open">
+        <img src="../images/icon-close.svg" alt="" width="14" height="15" class="header__menu-close" hidden>
+      </button>
+      <a href="../index.html" class="header__brand" aria-label="GadgetLab home">
+        <span class="header__brand-mark">G</span>
+        <span class="header__brand-text">GadgetLab</span>
+      </a>
+      <form class="header__search" role="search" action="products.html" method="get">
+        <label class="visually-hidden" for="site-search">Search products</label>
+        <input type="search" id="site-search" name="q" class="header__search-input" placeholder="Search…" autocomplete="off">
+      </form>
+      <nav class="nav nav--desktop" aria-label="Main">
+        <ul class="nav__list">
+          <li><a href="../index.html" class="nav__link">Home</a></li>
+          <li><a href="products.html" class="nav__link">Products</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        
+      
+     <a href="cart.html" class="header__cart-btn" aria-label="Shopping cart">
+          🛒
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobile-overlay" hidden></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <ul class="mobile-nav__list">
+      <li><a href="../index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="products.html" class="mobile-nav__link">Products</a></li>
+      <li><a href="login.html" class="mobile-nav__link">Log in</a></li>
+    </ul>
+  </nav>
+
+  <main class="auth-section">
+    <div class="auth-card">
+      <h1>Create your account</h1>
+      <p class="auth-subtext">Sign up to save profile details (demo — data stays in this browser).</p>
+      <form class="auth-form" id="signup-form">
+        <label class="auth-label">Name
+          <input class="auth-input" type="text" id="name" name="name" autocomplete="name" required>
+        </label>
+        <label class="auth-label">Email
+          <input class="auth-input" type="email" id="email" name="email" autocomplete="email" required>
+        </label>
+        <label class="auth-label">Password
+          <input class="auth-input" type="password" id="password" name="password" autocomplete="new-password" minlength="6" required>
+        </label>
+        <button class="auth-submit" type="submit">Create Account</button>
+        <p class="auth-hint">Already have an account? <a href="login.html">Log in</a></p>
+        <div id="message" aria-live="polite" style="margin-top: 1rem; text-align: center;"></div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> GadgetLab.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="../js/auth-local.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const signupForm = document.getElementById('signup-form');
+    const messageDiv = document.getElementById('message');
+
+    signupForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        messageDiv.textContent = '';
+        messageDiv.className = '';
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const res = await fetch('http://localhost:3001/api/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, password })
+            });
+
+            const data = await res.json();
+
+            if (res.status === 201) {
+                messageDiv.textContent = 'Account created successfully! Redirecting to login...';
+                messageDiv.style.color = 'green';
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
+            } else {
+                messageDiv.textContent = data.message || 'An error occurred.';
+                messageDiv.style.color = 'red';
+            }
+        } catch (err) {
+            console.error('Signup fetch error:', err);
+            messageDiv.textContent = 'Could not connect to the server. Please try again later.';
+            messageDiv.style.color = 'red';
+        }
+    });
+  </script>
+</body>
+</html>

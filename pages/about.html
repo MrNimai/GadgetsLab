@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About GadgetLab — our mission and values.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <title>About — GadgetLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="about">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__msg">GadgetLab — honest specs, real support</p>
+      <a href="contact.html" class="topbar__link">Contact</a>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <button type="button" class="header__menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <img src="../images/icon-menu.svg" alt="" width="16" height="15" class="header__menu-open">
+        <img src="../images/icon-close.svg" alt="" width="14" height="15" class="header__menu-close" hidden>
+      </button>
+
+      <a href="../index.html" class="header__brand" aria-label="GadgetLab home">
+        <span class="header__brand-mark">G</span>
+        <span class="header__brand-text">GadgetLab</span>
+      </a>
+
+      <form class="header__search" role="search" action="products.html" method="get">
+        <label class="visually-hidden" for="site-search">Search products</label>
+        <input type="search" id="site-search" name="q" class="header__search-input" placeholder="Search…" autocomplete="off">
+      </form>
+
+      <nav class="nav nav--desktop" aria-label="Main">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="products.html" class="nav__link">Products</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link is-active">About</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+       
+        <a href="cart.html" class="header__cart-btn" aria-label="Shopping cart">
+          🛒
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobile-overlay" hidden></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <form class="mobile-nav__search" action="products.html" method="get" role="search">
+      <input type="search" name="q" class="mobile-nav__search-input" placeholder="Search…" aria-label="Search products">
+    </form>
+    <ul class="mobile-nav__list">
+      <li><a href="../index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="products.html" class="mobile-nav__link">Products</a></li>
+      <li><a href="about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+      <li><a href="cart.html" class="mobile-nav__link">Cart</a></li>
+      <li><a href="login.html" class="mobile-nav__link">Log in</a></li>
+      <li><a href="signup.html" class="mobile-nav__link">Sign up</a></li>
+      <li><a href="profile.html" class="mobile-nav__link">Profile</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="inner-main">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">About GadgetLab</h1>
+        <p class="page-hero__lede">We started GadgetLab to make buying tech straightforward — clear specs, fair prices, and support that actually answers.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <h2>Our Mission</h2>
+            <p class="about-lead">We curate gadgets we would use ourselves: headphones that sound great, wearables that last the day, and accessories that solve real desk-and-travel problems.</p>
+            <p>At GadgetLab, we believe technology should enhance your life, not complicate it. That's why we carefully select every product in our catalog, focusing on quality, reliability, and genuine value.</p>
+          </div>
+          <div class="about-image">
+            <div class="about-image__wrap">
+              <div class="about-image__bg"></div>
+              <div class="about-image__content">
+                <div class="about-stats">
+                  <div class="about-stat">
+                    <div class="about-stat__number">500+</div>
+                    <div class="about-stat__label">Products Curated</div>
+                  </div>
+                  <div class="about-stat">
+                    <div class="about-stat__number">98%</div>
+                    <div class="about-stat__label">Customer Satisfaction</div>
+                  </div>
+                  <div class="about-stat">
+                    <div class="about-stat__number">4.9/5</div>
+                    <div class="about-stat__label">Average Rating</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--surface); margin: 0; padding: 4rem 0;">
+      <div class="container">
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🔍</div>
+            <h3>Transparency</h3>
+            <p>Honest reviews, clear specifications, and no hidden fees. We believe you deserve to know exactly what you're getting.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🛡️</div>
+            <h3>Quality Assurance</h3>
+            <p>Every product undergoes rigorous testing and vetting. We only sell what we'd confidently use ourselves.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">⚡</div>
+            <h3>Expert Support</h3>
+            <p>Real humans, real expertise. Our support team actually answers your questions and helps solve problems.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🔄</div>
+            <h3>Reliability</h3>
+            <p>Authorized distributors, genuine warranties, and hassle-free returns. Shop with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <h2>Our Partnerships</h2>
+            <p class="about-lead">We work with authorized distributors and trusted brands to ensure every product is genuine and backed by manufacturer warranty.</p>
+            <p>We help you register your warranty and guide you through the claims process when something goes wrong. Our goal is to make tech ownership as smooth as possible from purchase to long-term use.</p>
+            <div class="about-cta">
+              <a href="products.html" class="btn btn--primary btn--lg">Explore Our Products</a>
+              <a href="contact.html" class="btn btn--ghost">Get in Touch</a>
+            </div>
+          </div>
+          <div class="about-image">
+            <div class="about-image__wrap about-image__wrap--reverse">
+              <div class="about-image__bg about-image__bg--accent"></div>
+              <div class="about-image__content">
+                <div class="about-team">
+                  <div class="about-team__item">
+                    <div class="about-team__avatar">👨‍💻</div>
+                    <div class="about-team__info">
+                      <div class="about-team__name">Tech Experts</div>
+                      <div class="about-team__role">Product Specialists</div>
+                    </div>
+                  </div>
+                  <div class="about-team__item">
+                    <div class="about-team__avatar">📞</div>
+                    <div class="about-team__info">
+                      <div class="about-team__name">Support Team</div>
+                      <div class="about-team__role">Customer Care</div>
+                    </div>
+                  </div>
+                  <div class="about-team__item">
+                    <div class="about-team__avatar">📦</div>
+                    <div class="about-team__info">
+                      <div class="about-team__name">Logistics</div>
+                      <div class="about-team__role">Shipping & Returns</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); margin: 0; padding: 4rem 0;">
+      <div class="container">
+        <div class="about-journey">
+          <h2 class="about-journey__title">Our Journey</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h4>Founding</h4>
+                <p>Started with a simple mission: make tech shopping honest and straightforward.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h4>Growth</h4>
+                <p>Expanded our catalog while maintaining our commitment to quality and transparency.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h4>Today</h4>
+                <p>Helping thousands of customers find the right tech for their needs.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h4>Future</h4>
+                <p>Continuing to innovate and improve the tech shopping experience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="../index.html" class="footer__logo"><span class="header__brand-mark">G</span> GadgetLab</a>
+        <p class="footer__tagline">Independent tech retailer.</p>
+      </div>
+      <div>
+        <h3 class="footer__heading">Shop</h3>
+        <ul class="footer__list">
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Support</h3>
+        <ul class="footer__list">
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Company</h3>
+        <ul class="footer__list">
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> GadgetLab.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="../js/products-data.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/auth-local.js"></script>
+</body>
+</html>

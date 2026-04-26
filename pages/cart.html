@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your shopping cart at GadgetLab.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <title>Cart — GadgetLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="cart">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__msg">Secure checkout · 30-day returns</p>
+      <a href="contact.html" class="topbar__link">Help</a>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <button type="button" class="header__menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <img src="../images/icon-menu.svg" alt="" width="16" height="15" class="header__menu-open">
+        <img src="../images/icon-close.svg" alt="" width="14" height="15" class="header__menu-close" hidden>
+      </button>
+
+      <a href="../index.html" class="header__brand" aria-label="GadgetLab home">
+        <span class="header__brand-mark">G</span>
+        <span class="header__brand-text">GadgetLab</span>
+      </a>
+
+      <form class="header__search" role="search" action="products.html" method="get">
+        <label class="visually-hidden" for="site-search">Search products</label>
+        <input type="search" id="site-search" name="q" class="header__search-input" placeholder="Search…" autocomplete="off">
+      </form>
+
+      <nav class="nav nav--desktop" aria-label="Main">
+        <ul class="nav__list">
+          <li><a href="../index.html" class="nav__link">Home</a></li>
+          <li><a href="products.html" class="nav__link">Products</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        
+     <a href="cart.html" class="header__cart-btn" aria-label="Shopping cart">
+          🛒
+        </a>
+      
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobile-overlay" hidden></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <form class="mobile-nav__search" action="products.html" method="get" role="search">
+      <input type="search" name="q" class="mobile-nav__search-input" placeholder="Search…" aria-label="Search products">
+    </form>
+    <ul class="mobile-nav__list">
+      <li><a href="../index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="products.html" class="mobile-nav__link">Products</a></li>
+      <li><a href="about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+      <li><a href="cart.html" class="mobile-nav__link">Cart</a></li>
+      <li><a href="login.html" class="mobile-nav__link">Log in</a></li>
+      <li><a href="signup.html" class="mobile-nav__link">Sign up</a></li>
+      <li><a href="profile.html" class="mobile-nav__link">Profile</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="cart-page">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Your cart</h1>
+        <p class="page-hero__lede">Review items before checkout. Quantities sync across all GadgetLab pages.</p>
+      </div>
+    </section>
+
+    <div class="container cart-page__layout">
+      <div>
+        <div id="cart-page-empty" class="cart-page__empty" hidden>
+          <p>Your cart is empty.</p>
+          <p><a href="products.html" class="btn btn--primary">Browse products</a></p>
+        </div>
+        <ul id="cart-page-lines" class="cart-page__list" role="list"></ul>
+      </div>
+      <aside id="cart-page-summary" class="cart-page__aside" hidden>
+        <h2 class="cart-page__aside-title">Order summary</h2>
+        <p class="cart-summary-row" style="margin: 0 0 1rem;">
+          <span>Subtotal</span>
+          <strong id="cart-page-subtotal">$0.00</strong>
+        </p>
+        <p class="cart-summary-note" style="margin: 0 0 1rem;">Tax and shipping calculated at checkout.</p>
+        <button type="button" class="btn btn--primary btn--block" id="cart-checkout-btn">Checkout</button>
+        <p style="margin: 1rem 0 0; font-size: 0.8125rem;"><a href="products.html">Continue shopping</a></p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="../index.html" class="footer__logo"><span class="header__brand-mark">G</span> GadgetLab</a>
+        <p class="footer__tagline">Independent tech retailer.</p>
+      </div>
+      <div>
+        <h3 class="footer__heading">Shop</h3>
+        <ul class="footer__list">
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Support</h3>
+        <ul class="footer__list">
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Company</h3>
+        <ul class="footer__list">
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> GadgetLab.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="../js/products-data.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/auth-local.js"></script>
+  <script src="../js/cart-page.js"></script>
+</body>
+</html>

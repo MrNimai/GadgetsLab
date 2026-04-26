@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in — GadgetLab</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="login">
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <button type="button" class="header__menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <img src="../images/icon-menu.svg" alt="" width="16" height="15" class="header__menu-open">
+        <img src="../images/icon-close.svg" alt="" width="14" height="15" class="header__menu-close" hidden>
+      </button>
+      <a href="../index.html" class="header__brand" aria-label="GadgetLab home">
+        <span class="header__brand-mark">G</span>
+        <span class="header__brand-text">GadgetLab</span>
+      </a>
+      <form class="header__search" role="search" action="products.html" method="get">
+        <label class="visually-hidden" for="site-search">Search products</label>
+        <input type="search" id="site-search" name="q" class="header__search-input" placeholder="Search…" autocomplete="off">
+      </form>
+      <nav class="nav nav--desktop" aria-label="Main">
+        <ul class="nav__list">
+          <li><a href="../index.html" class="nav__link">Home</a></li>
+          <li><a href="products.html" class="nav__link">Products</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+       
+      <a href="cart.html" class="header__cart-btn" aria-label="Shopping cart">
+          🛒
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobile-overlay" hidden></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <ul class="mobile-nav__list">
+      <li><a href="../index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="products.html" class="mobile-nav__link">Products</a></li>
+      <li><a href="signup.html" class="mobile-nav__link">Sign up</a></li>
+    </ul>
+  </nav>
+
+  <main class="auth-section">
+    <div class="auth-card">
+      <h1>Welcome back</h1>
+      <p class="auth-subtext">Log in to manage your profile and orders (demo — stored in this browser only).</p>
+      <form class="auth-form" id="login-form">
+        <label class="auth-label">Email
+          <input class="auth-input" type="email" name="email" autocomplete="email" required>
+        </label>
+        <label class="auth-label">Password
+          <input class="auth-input" type="password" name="password" autocomplete="current-password" required>
+        </label>
+        <button class="auth-submit" type="submit">Log in</button>
+        <div class="auth-links">
+          <p class="auth-hint">New here? <a href="signup.html">Create an account</a></p>
+          <p class="auth-hint"><a href="forgot-password.html">Forgot password?</a></p>
+        </div>
+        <p class="auth-error" id="login-error" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> GadgetLab.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="../js/site.js"></script>
+  <script src="../js/auth-local.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Don't run login-specific logic if user is already logged in
+      if (localStorage.getItem('authToken')) {
+        window.location.href = '../index.html';
+        return;
+      }
+
+      const loginForm = document.getElementById('login-form');
+      const errorElement = document.getElementById('login-error');
+
+      loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        errorElement.textContent = ''; // Clear previous errors
+
+        const formData = new FormData(loginForm);
+        const email = formData.get('email');
+        const password = formData.get('password');
+
+        try {
+          const res = await fetch('http://localhost:3001/api/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
+
+          const data = await res.json();
+
+          if (!res.ok) {
+            throw new Error(data.message || 'Login failed');
+          }
+
+        // On successful login, save the token and redirect
+        localStorage.setItem('authToken', data.token);
+        
+        // Update auth area to show profile link
+        window.GadgetLabAuth.renderAuthArea();
+
+        window.location.href = '../index.html'; // Redirect to homepage
+
+        } catch (err) {
+          errorElement.textContent = err.message;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
